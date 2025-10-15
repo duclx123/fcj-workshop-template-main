@@ -34,7 +34,6 @@ The platform employs a serverless AWS architecture to manage data from 5 Raspber
 
 ![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/hehen.jpg)
 ### AWS Services Used
 - **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
 - **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
