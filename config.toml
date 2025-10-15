@@ -1,10 +1,11 @@
 baseURL = "https://duclx123.github.io/fcj-workshop-template-main/"
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = true
 
 theme = "hugo-theme-learn"
 
 languageCode = "en"
+defaultContentLanguageInSubdir = true
 defaultContentLanguage = "en"
 hasCJKLanguage = true
 
