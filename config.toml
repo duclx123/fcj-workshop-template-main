@@ -2,32 +2,23 @@ baseURL = "https://duclx123.github.io/fcj-workshop-template-main/"
 relativeURLs = true
 canonifyURLs = true
 
-languageCode = "vi"
-defaultContentLanguage = "vi"
-defaultContentLanguageInSubdir = false
-hasCJKLanguage = true
-
-# Theme
 theme = "hugo-theme-learn"
 
-# For search functionality
+languageCode = "en"
+defaultContentLanguage = "en"
+hasCJKLanguage = true
+
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
 [params]
-  # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
-  # GitHub repo link
-  editURL = ""
   description = ""
   author = "ducnqse182087@fpt.edu.vn"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
 
-# -----------------------------
-# 🌐 Multilingual configuration
-# -----------------------------
 [languages]
   [languages.en]
   title = "Internship Report"
@@ -51,6 +42,7 @@ home = [ "HTML", "RSS", "JSON"]
   url = "https://www.facebook.com/groups/awsstudygroupfcj/"
   weight = 20
 
-# Markdown
-[markup.goldmark.renderer]
-unsafe = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
