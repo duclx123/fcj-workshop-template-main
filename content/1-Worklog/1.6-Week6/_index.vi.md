@@ -1,58 +1,44 @@
 ---
 title: "Worklog Tuần 6"
-date: 2025-01-01
+date: 2025-10-13
 weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hệ thống lại toàn bộ kiến thức về kiến trúc AWS và **Well-Architected Framework**.  
+* Thực hành lại các bài lab phức tạp để củng cố kỹ năng triển khai và quản lý hệ thống.  
+* Vẽ sơ đồ kiến trúc các hệ thống phổ biến: Web 3-tier, Serverless, hệ thống có CDN.  
+* Ôn tập các dịch vụ trọng tâm: **EC2, S3, IAM, RDS, VPC, Lambda, CloudWatch, CloudFront**.  
+* Chuẩn bị tinh thần và kiến thức cho kỳ thi AWS Certified Solutions Architect.  
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+---
 
+### Nhiệm vụ thực hiện trong tuần:
 
-### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|---------------|-----------------|----------------|
+| 2 | - Thực hành lab **Well-Architected Framework Overview**.<br>- **Thực hành:**<br>&emsp;+ Đọc và tóm tắt **5 trụ cột của AWS Well-Architected Framework**.<br>&emsp;+ Ghi chú các best practices cho từng trụ cột. | 13/10/2025 | 13/10/2025 | [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected/) |
+| 3 | - Thực hành lại bài lab **Highly Available Web Application**.<br>- **Thực hành:**<br>&emsp;+ Triển khai Multi-AZ EC2.<br>&emsp;+ Cấu hình **Load Balancer** và **Auto Scaling Group**.<br>&emsp;+ Kiểm tra failover và scale-out/scale-in. | 14/10/2025 | 14/10/2025 | [AWS Study Group](https://000029.awsstudygroup.com/) |
+| 4 | - Thực hành lab **Architecture Diagrams**.<br>- **Thực hành:**<br>&emsp;+ Vẽ sơ đồ Web 3-tier (ELB + EC2 + RDS).<br>&emsp;+ Vẽ sơ đồ Serverless App (Lambda + API Gateway + DynamoDB).<br>&emsp;+ Vẽ hệ thống có CDN (CloudFront + S3).<br>&emsp;+ Phân tích ưu/nhược điểm từng kiến trúc. | 15/10/2025 | 15/10/2025 | [AWS Architecture Center](https://aws.amazon.com/architecture/) |
+| 5 |  |  |  |  |
+| 6 |  |  |  |  |
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+---
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+### Kết quả đạt được tuần 6
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+#### 1. Well-Architected Framework
+- Nắm vững **5 trụ cột** và ứng dụng **best practices** cho hệ thống.  
+- Nhận diện các rủi ro và cách tối ưu kiến trúc cho chi phí, hiệu năng và bảo mật.  
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+#### 2. Lab Highly Available Web Application
+- Thực hành Multi-AZ EC2 với **Load Balancer** và **Auto Scaling**.  
+- Khắc phục lỗi, kiểm tra failover và scale-out/scale-in.  
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
+#### 3. Lab Architecture Diagrams
+- Hoàn thành sơ đồ cho Web 3-tier, Serverless, và hệ thống có CDN.  
+- Hiểu ưu/nhược điểm từng kiến trúc và ứng dụng thực tế.  
 

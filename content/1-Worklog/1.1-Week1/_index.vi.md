@@ -16,7 +16,7 @@ pre: " <b> 1.1. </b> "
 
 ---
 
-### Nhiệm vụ thực hiện trong tuần:
+### Các công việc cần triển khai trong tuần này:
 
 | Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành |         Nguồn tài liệu       |
 |------|-----------|---------------|------------------|--------------------|

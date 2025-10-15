@@ -28,7 +28,7 @@ pre: " <b> 1.2. </b> "
 
 ---
 
-## Week 2 Achievements
+### Week 2 Achievements
 
 ### Compute & Storage Mastery
 - Successfully created and attached **EBS volumes** to EC2 instances across different operating systems.  

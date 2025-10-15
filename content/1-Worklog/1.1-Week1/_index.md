@@ -24,7 +24,7 @@ pre: " <b> 1.1. </b> "
 | 5   | - Get introduced to Amazon EC2 core concepts.<br>- Deploy applications on different operating systems.<br>- **Practice:**<br>&emsp;+ Launch a **Windows Server 2022** instance and connect via RDP.<br>&emsp;+ Launch an **Amazon Linux 2** instance and connect via SSH.<br>&emsp;+ Deploy a user management application on both instances.<br>&emsp;+ Implement cost governance for EC2 usage.        | 11/09/2025 | 11/09/2025      | [AWS Study Group](https://000004.awsstudygroup.com/) |
 | 6   | - Understand why hardcoding access keys in applications is a security risk.<br>- Learn to use IAM Roles for EC2 to grant secure permissions.<br>- **Practice:**<br>&emsp;+ Prepare an S3 bucket and an EC2 instance.<br>&emsp;+ Create an **IAM Role** with S3 access permissions.<br>&emsp;+ Attach the role to the EC2 instance.<br>&emsp;+ Verify the application can access S3 without access keys. | 12/09/2025 | 12/09/2025      | [AWS Study Group](https://000048.awsstudygroup.com/)                                                                                                                                                                                                                                                                                                                                                           |
 
-# Week 1 Achievements
+### Week 1 Achievements
 
 ## Cost Management
 -   Successfully created and configured **AWS Budgets** to monitor costs and usage.

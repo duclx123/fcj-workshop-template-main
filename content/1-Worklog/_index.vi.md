@@ -17,15 +17,15 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 1:** [Làm quen với AWS và các dịch vụ cơ bản trong AWS](1.1-week1/)
 
-**Tuần 2:** [Làm công việc A...](1.2-week2/)
+**Tuần 2:** [Dịch vụ tính toán và lưu trữ cốt lõi trên AWS](1.2-week2/)
 
-**Tuần 3:** [Làm công việc B...](1.3-week3/)
+**Tuần 3:** [Xây dựng kiến trúc có tính sẵn sàng cao và khả năng mở rộng](1.3-week3/)
 
-**Tuần 4:** [Làm công việc C...](1.4-week4/)
+**Tuần 4:** [Triển khai lưu trữ dữ liệu, sao lưu và bảo mật](1.4-week4/)
 
-**Tuần 5:** [Làm công việc D...](1.5-week5/)
+**Tuần 5:** [Tối ưu hiệu năng và chi phí trên AWS](1.5-week5/)
 
-**Tuần 6:** [Làm công việc E...](1.6-week6/)
+**Tuần 6:** [Củng cố kiến thức và thực hành các kiến trúc AWS](1.6-week6/)
 
 **Tuần 7:** [Làm công việc G...](1.7-week7/)
 
