@@ -4,6 +4,7 @@ canonifyURLs = true
 
 languageCode = "vi"
 defaultContentLanguage = "vi"
+defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
 
 theme = "hugo-theme-learn"
@@ -19,22 +20,15 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
-[languages]
-  [languages.en]
-  title = "Internship Report"
-  weight = 1
-  languageName = "English"
 
-  [[languages.en.menu.shortcuts]]
-  name = "<i class='fab fa-facebook'></i> AWS Study Group"
-  identifier = "AWS Study Group FB"
-  url = "https://www.facebook.com/groups/awsstudygroupfcj/"
-  weight = 20
+# ------------------------------
+# 🟢 Định nghĩa ngôn ngữ
+# ------------------------------
+[languages]
 
   [languages.vi]
   title = "Báo cáo thực tập"
-  weight = 2
+  weight = 1
   languageName = "Tiếng Việt"
 
   [[languages.vi.menu.shortcuts]]
@@ -43,7 +37,19 @@ home = [ "HTML", "RSS", "JSON"]
   url = "https://www.facebook.com/groups/awsstudygroupfcj/"
   weight = 20
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  [languages.en]
+  title = "Internship Report"
+  weight = 2
+  languageName = "English"
+
+  [[languages.en.menu.shortcuts]]
+  name = "<i class='fab fa-facebook'></i> AWS Study Group"
+  identifier = "AWS Study Group FB"
+  url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+  weight = 20
+
+# ------------------------------
+# 🧱 Markdown renderer settings
+# ------------------------------
+[markup.goldmark.renderer]
+unsafe = true
