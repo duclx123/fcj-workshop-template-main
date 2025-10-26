@@ -6,39 +6,48 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-### Mục tiêu tuần 6:
+### Mục tiêu của Tuần 6:
 
-* Hệ thống lại toàn bộ kiến thức về kiến trúc AWS và **Well-Architected Framework**.  
-* Thực hành lại các bài lab phức tạp để củng cố kỹ năng triển khai và quản lý hệ thống.  
-* Vẽ sơ đồ kiến trúc các hệ thống phổ biến: Web 3-tier, Serverless, hệ thống có CDN.  
-* Ôn tập các dịch vụ trọng tâm: **EC2, S3, IAM, RDS, VPC, Lambda, CloudWatch, CloudFront**.  
-* Chuẩn bị tinh thần và kiến thức cho kỳ thi AWS Certified Solutions Architect.  
-
----
-
-### Nhiệm vụ thực hiện trong tuần:
-
-| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-|------|-----------|---------------|-----------------|----------------|
-| 2 | - Thực hành lab **Well-Architected Framework Overview**.<br>- **Thực hành:**<br>&emsp;+ Đọc và tóm tắt **5 trụ cột của AWS Well-Architected Framework**.<br>&emsp;+ Ghi chú các best practices cho từng trụ cột. | 13/10/2025 | 13/10/2025 | [AWS Well-Architected](https://aws.amazon.com/architecture/well-architected/) |
-| 3 | - Thực hành lại bài lab **Highly Available Web Application**.<br>- **Thực hành:**<br>&emsp;+ Triển khai Multi-AZ EC2.<br>&emsp;+ Cấu hình **Load Balancer** và **Auto Scaling Group**.<br>&emsp;+ Kiểm tra failover và scale-out/scale-in. | 14/10/2025 | 14/10/2025 | [AWS Study Group](https://000029.awsstudygroup.com/) |
-| 4 | - Thực hành lab **Architecture Diagrams**.<br>- **Thực hành:**<br>&emsp;+ Vẽ sơ đồ Web 3-tier (ELB + EC2 + RDS).<br>&emsp;+ Vẽ sơ đồ Serverless App (Lambda + API Gateway + DynamoDB).<br>&emsp;+ Vẽ hệ thống có CDN (CloudFront + S3).<br>&emsp;+ Phân tích ưu/nhược điểm từng kiến trúc. | 15/10/2025 | 15/10/2025 | [AWS Architecture Center](https://aws.amazon.com/architecture/) |
-| 5 |  |  |  |  |
-| 6 |  |  |  |  |
+* Tìm hiểu cách thiết kế và triển khai **kiến trúc serverless** trên AWS.  
+* Xây dựng và kiểm thử ứng dụng sử dụng **AWS Lambda**, **API Gateway** và **DynamoDB**.  
+* Tự động hóa việc triển khai hạ tầng bằng **AWS CloudFormation**.  
+* Khám phá thiết kế **event-driven** (dựa trên sự kiện) và tích hợp giữa các dịch vụ.  
+* Áp dụng các phương pháp **giám sát và logging** cho môi trường serverless.  
 
 ---
 
-### Kết quả đạt được tuần 6
+### Các công việc cần triển khai trong tuần này:
 
-#### 1. Well-Architected Framework
-- Nắm vững **5 trụ cột** và ứng dụng **best practices** cho hệ thống.  
-- Nhận diện các rủi ro và cách tối ưu kiến trúc cho chi phí, hiệu năng và bảo mật.  
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|------|-----------|---------------|------------------|--------------------|
+| 2 | - Tìm hiểu khái niệm và lợi ích của **Serverless Computing**.<br>- So sánh khi nào nên dùng **Lambda** thay vì **EC2**.<br>- **Thực hành:**<br>&emsp;+ Tạo một **Lambda function** đơn giản bằng Python.<br>&emsp;+ Kiểm thử function qua AWS Console và CLI.<br><br>→ Hiểu cơ chế hoạt động cơ bản của serverless. | 13/10/2025 | 13/10/2025 | [AWS Study Group](https://000031.awsstudygroup.com/) |
+| 3 | - Học cách xây dựng API bằng **Amazon API Gateway**.<br>- **Thực hành:**<br>&emsp;+ Tạo endpoint REST API kết nối với Lambda.<br>&emsp;+ Triển khai API theo từng stage và kiểm tra truy cập công khai.<br><br>→ Hiểu cách API tích hợp với Lambda. | 14/10/2025 | 14/10/2025 | [AWS Study Group](https://000032.awsstudygroup.com/) |
+| 4 | - Làm việc với **Amazon DynamoDB** để lưu trữ dữ liệu serverless.<br>- **Thực hành:**<br>&emsp;+ Tạo bảng DynamoDB, định nghĩa khóa phân vùng và khóa sắp xếp.<br>&emsp;+ Kết nối Lambda để thực hiện các thao tác CRUD.<br>&emsp;+ Kiểm thử việc truy xuất và cập nhật dữ liệu qua API Gateway.<br><br>→ Nắm vững kiến trúc serverless dựa trên dữ liệu. | 15/10/2025 | 15/10/2025 | [AWS Study Group](https://000033.awsstudygroup.com/) |
+| 5 | - Tìm hiểu **AWS CloudFormation** để quản lý hạ tầng dưới dạng mã (IaC).<br>- **Thực hành:**<br>&emsp;+ Viết file YAML để triển khai Lambda, API Gateway và DynamoDB.<br>&emsp;+ Tự động tạo và xóa stack bằng CloudFormation.<br><br>→ Biết cách tự động triển khai hệ thống serverless bằng mã nguồn. | 16/10/2025 | 16/10/2025 | [AWS Study Group](https://000034.awsstudygroup.com/) |
+| 6 | - Cấu hình giám sát và tự động hóa cho hệ thống serverless.<br>- **Thực hành:**<br>&emsp;+ Dùng **CloudWatch Logs** để xem log thực thi Lambda.<br>&emsp;+ Thiết lập **CloudWatch Alarms** để cảnh báo lỗi hoặc giới hạn.<br>&emsp;+ Tạo quy tắc tự động bằng **EventBridge**.<br><br>→ Nâng cao khả năng giám sát và tự động phản ứng trong hệ thống. | 17/10/2025 | 17/10/2025 | [AWS Study Group](https://000035.awsstudygroup.com/) |
 
-#### 2. Lab Highly Available Web Application
-- Thực hành Multi-AZ EC2 với **Load Balancer** và **Auto Scaling**.  
-- Khắc phục lỗi, kiểm tra failover và scale-out/scale-in.  
+---
 
-#### 3. Lab Architecture Diagrams
-- Hoàn thành sơ đồ cho Web 3-tier, Serverless, và hệ thống có CDN.  
-- Hiểu ưu/nhược điểm từng kiến trúc và ứng dụng thực tế.  
+### Kết quả đạt được trong Tuần 6
 
+#### 1. Kiến thức cơ bản về Serverless
+- Hiểu rõ lợi ích của kiến trúc serverless (không cần quản lý server, tự động mở rộng, trả phí theo mức sử dụng).  
+- Tạo và kiểm thử **Lambda function** được kích hoạt thủ công và bằng sự kiện API.  
+
+#### 2. Tích hợp với API Gateway
+- Xây dựng **REST API** bằng **API Gateway** kết nối với **Lambda**.  
+- Triển khai nhiều stage (dev, prod) và kiểm thử truy cập công khai thành công.  
+
+#### 3. Kết nối với DynamoDB
+- Thiết kế bảng **DynamoDB** với cấu trúc khóa hiệu quả cho truy xuất nhanh.  
+- Tích hợp Lambda để thực hiện **CRUD operations** trực tiếp.  
+- Hoàn thiện quy trình **API → Lambda → DynamoDB** đầy đủ.  
+
+#### 4. Hạ tầng dưới dạng mã (IaC)
+- Tự động triển khai kiến trúc serverless bằng **CloudFormation**.  
+- Quản lý vòng đời stack (tạo, cập nhật, xóa) một cách linh hoạt và tái sử dụng.  
+
+#### 5. Giám sát và Tự động hóa
+- Cấu hình **CloudWatch Logs** và **CloudWatch Alarms** để phát hiện sự cố.  
+- Sử dụng **EventBridge** để tự động phản ứng khi có sự kiện từ Lambda.  
+- Tăng cường khả năng quan sát, độ tin cậy và tính tự động của hệ thống serverless.  

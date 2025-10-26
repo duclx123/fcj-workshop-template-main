@@ -6,12 +6,6 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-⚠️ **Note:** The information below is a draft based on our conversations.  
-Please do not copy verbatim for your report.  
-You must adapt and refine it with your team's specific goals and data, including this warning.
-
----
-
 # Mini Food Social: An AI-Powered Serverless Recipe Platform  
 ### A Unified AWS Serverless Solution for Social Food Discovery and AI-Driven Recipe Generation
 
