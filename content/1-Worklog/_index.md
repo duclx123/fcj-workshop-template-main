@@ -24,9 +24,9 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 5:** [Optimizing Performance and Cost on AWS](1.5-week5/)
 
-**Week 6:** [Consolidating Knowledge and Practicing AWS Architectures](1.6-week6/)
+**Week 6:** [Building Serverless Systems with Automation](1.6-week6/)
 
-**Week 7:** [Doing task G...](1.7-week7/)
+**Week 7:** [Monitoring Cloud Resources and Cost Efficiency](1.7-week7/)
 
 **Week 8:** [Doing task H...](1.8-week8/)
 

@@ -25,9 +25,9 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 5:** [Tối ưu hiệu năng và chi phí trên AWS](1.5-week5/)
 
-**Tuần 6:** [Củng cố kiến thức và thực hành các kiến trúc AWS](1.6-week6/)
+**Tuần 6:** [Xây dựng hệ thống không máy chủ với tự động hóa](1.6-week6/)
 
-**Tuần 7:** [Làm công việc G...](1.7-week7/)
+**Tuần 7:** [Giám sát tài nguyên đám mây và tối ưu chi phí](1.7-week7/)
 
 **Tuần 8:** [Làm công việc H...](1.8-week8/)
 
