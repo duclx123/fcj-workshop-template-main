@@ -1,3 +1,11 @@
+---
+title: "Proposal"
+date: 2025-01-01
+weight: 2
+chapter: false
+pre: " <b> 2. </b> "
+---
+
 # Mini Food Social  
 ## A Serverless Social Platform with AI-Powered Recipe Generation
 
