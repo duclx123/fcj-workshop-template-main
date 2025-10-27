@@ -5,9 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Thông tin bên dưới chỉ nhằm mục đích tham khảo. Vui lòng **không sao chép nguyên văn** cho báo cáo của bạn, bao gồm cả cảnh báo này.
-{{% /notice %}}
 
 # Mini Food Social  
 ## Nền tảng mạng xã hội ẩm thực Serverless với tính năng gợi ý công thức bằng AI
