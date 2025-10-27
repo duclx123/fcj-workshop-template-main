@@ -1,79 +1,67 @@
----
-title: "Proposal"
-date: 2025-01-01
-weight: 2
-chapter: false
-pre: " <b> 2. </b> "
----
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
 # Mini Food Social  
 ## A Serverless Social Platform with AI-Powered Recipe Generation
 
 ### 1. Executive Summary
-**Mini Food Social** is a lightweight, serverless social web application built for food enthusiasts.  
-It allows users to share, discover, and generate new recipes through AI.  
-The platform supports up to **50 registered users**, featuring authentication, post creation, image upload, and AI-generated recipe suggestions.  
+**Mini Food Social** is a fully serverless, AI-enhanced social platform built for food enthusiasts.  
+It enables users to share posts, upload food images, and generate new recipe ideas through AI.  
+The system supports up to **100 registered users**, providing authentication, CRUD functionality, and interactive features such as likes and comments.
 
-The system uses a **fully serverless AWS architecture**:
+The architecture leverages **AWS managed services** for scalability, cost efficiency, and minimal operational overhead:
 - **AWS Amplify** (Next.js frontend hosting & CI/CD)
 - **Amazon API Gateway** + **AWS Lambda** (backend APIs)
 - **Amazon DynamoDB** (NoSQL data store)
 - **Amazon Bedrock** (AI text generation)
-- **Amazon Cognito** (user authentication)
-- **Amazon CloudFront + WAF + ACM + Route 53** (secure edge delivery)
+- **Amazon Cognito** (authentication)
+- **Amazon CloudFront + WAF + ACM + Route 53** (secure content delivery)
 
-The solution is scalable, cost-efficient, and production-ready while remaining affordable for small-scale deployments.
+This solution provides an affordable, production-ready foundation for modern serverless applications.
 
 ---
 
 ### 2. Problem Statement
-#### What’s the Problem?
-Existing recipe-sharing platforms are static and lack personalization.  
-Users want:
-- Community-driven interaction (likes, comments, sharing)
-- AI-assisted recipe ideas based on ingredients or mood  
-- Simple but secure authentication  
+#### The Problem
+Traditional recipe-sharing apps lack personalization and dynamic engagement.  
+Users increasingly seek:
+- Interactive communities (posting, liking, commenting)
+- Smart recipe generation using AI  
+- Reliable authentication and security  
 
-However, building a scalable platform with these capabilities often requires complex backend management and expensive compute resources.
+However, such platforms often demand heavy backend infrastructure and high costs.
 
 #### The Solution
-**Mini Food Social** leverages AWS Serverless to eliminate backend management overhead.  
-Using an event-driven, pay-per-use model:
-- **Amplify** hosts the web UI and handles deployment via GitLab CI/CD.  
-- **Cognito** manages sign-in/sign-up and JWT-based authentication.  
-- **API Gateway** routes requests to Lambda functions.  
-- **Router Lambda** coordinates specialized handlers for posts, user profiles, and AI interactions.  
-- **Bedrock** generates recipes dynamically using user prompts.  
-- **CloudFront + WAF** protect the app from malicious traffic.  
+**Mini Food Social** employs a fully **serverless** and **event-driven** AWS stack:
+- **Amplify** hosts and deploys the frontend via GitLab CI/CD.  
+- **Cognito** manages secure sign-in/sign-up and JWT tokens.  
+- **API Gateway** connects requests to Lambda functions.  
+- **Lambda Router** delegates tasks to handlers for posts, profiles, and AI requests.  
+- **Bedrock** generates personalized recipes using user prompts.  
+- **CloudFront + WAF** ensure fast and secure traffic delivery.  
 
 ---
 
 ### Benefits and Return on Investment
-- **Low-cost scalability** — Pay only per request; ideal for small teams or demo apps.  
-- **Modern serverless stack** — No infrastructure maintenance.  
-- **AI integration** — Increases engagement and user retention.  
-- **Secure & compliant** — Managed auth (Cognito) and encrypted data (S3, DynamoDB).  
+- **Low operational cost** — Pay only for actual usage.  
+- **Highly scalable** — Auto-scales with user demand.  
+- **AI-powered engagement** — Improves user retention and creativity.  
+- **Secure and compliant** — Cognito authentication and encrypted data in DynamoDB & S3.  
 
-**Estimated Monthly Cost (No Free Tier): ≈ $32.60 USD**  
-**Annual Cost: ≈ $391.20 USD**  
+**Estimated Monthly Cost (No Free Tier): ≈ $16.70 USD**  
+**Annual Cost: ≈ $200.40 USD**
 
 ---
 
 ### 3. Solution Architecture
-The platform adopts a five-layer serverless architecture built entirely on AWS to ensure scalability, maintainability, and cost efficiency.
+The system follows a **five-layer serverless architecture** that ensures modularity, scalability, and cost control.
 
-At the CI/CD Layer, GitLab automates both frontend and backend deployments — pushing frontend updates to AWS Amplify and provisioning backend infrastructure via AWS CDK and AWS CloudFormation.
+At the **CI/CD Layer**, GitLab automates deployments — pushing frontend code to **AWS Amplify** and provisioning backend infrastructure via **AWS CDK** and **CloudFormation**.
 
-The Edge Layer secures all inbound traffic through Amazon Route 53 for domain management, AWS Certificate Manager (ACM) for SSL encryption, AWS WAF for web application firewall protection, and Amazon CloudFront for global content delivery. CloudFront communicates privately with S3 using an Origin Access Identity (OAI) to ensure secure asset access.
+The **Edge Layer** secures and routes all requests using **Amazon Route 53** for DNS, **ACM** for SSL/TLS, **WAF** for traffic filtering, and **CloudFront** for global content caching. CloudFront communicates privately with **S3** using an **Origin Access Identity (OAI)**.
 
-Within the Application Layer, AWS Amplify hosts the Next.js frontend, while Amazon API Gateway and AWS Lambda manage backend API requests. Amazon Cognito provides authentication, authorization, and JWT token validation for all user interactions.
+In the **Application Layer**, Amplify hosts the **Next.js frontend**, while **API Gateway** and **Lambda** handle backend logic. **Cognito** authenticates users and manages tokens for API access.
 
-The Data Storage Layer leverages Amazon DynamoDB for the main application data, Amazon S3 for storing media and images, and Amazon EventBridge for asynchronous communication and scheduled workflows.
+The **Data Storage Layer** uses **DynamoDB** for core data, **S3** for image storage, and **EventBridge** for asynchronous tasks (e.g., post notifications).
 
-Lastly, the Observability Layer integrates Amazon CloudWatch for logging and monitoring, AWS X-Ray for request tracing and performance visualization, and Amazon SNS for real-time alerting and notifications — ensuring transparency, reliability, and operational efficiency across the platform.
+Finally, the **Observability Layer** integrates **CloudWatch** (logs & metrics), **X-Ray** (request tracing), and **SNS** (alerting), ensuring transparency and reliability.
 
 ![Mini Food Social Architecture](/images/2-Proposal/FsocialArchitecture.png)
 
@@ -89,14 +77,14 @@ Lastly, the Observability Layer integrates Amazon CloudWatch for logging and mon
 ---
 
 ### Component Design
-- **User Access:** User → CloudFront → Amplify (Frontend)
-- **Authentication:** CloudFront → Cognito (Hosted UI redirect)
-- **API Calls:** Amplify → Route 53 → CloudFront → WAF → API Gateway
-- **API Authorization:** API Gateway → Cognito Authorizer
-- **Backend Logic:** API Router Lambda → DynamoDB / S3 / Bedrock
-- **AI Recipes:** AI Handler Lambda → Bedrock (Claude model)
-- **Image Delivery:** CloudFront → S3 (via OAI)
-- **Events & Logs:** EventBridge, CloudWatch, X-Ray, SNS
+- **User Access:** User → CloudFront → Amplify (Frontend)  
+- **Authentication:** CloudFront → Cognito (Hosted UI redirect)  
+- **API Calls:** Amplify → Route 53 → CloudFront → WAF → API Gateway  
+- **API Authorization:** API Gateway → Cognito Authorizer  
+- **Backend Logic:** API Router Lambda → DynamoDB / S3 / Bedrock  
+- **AI Recipes:** AI Handler Lambda → Bedrock (Claude model)  
+- **Image Delivery:** CloudFront → S3 (via OAI)  
+- **Events & Logs:** EventBridge, CloudWatch, X-Ray, SNS  
 
 ---
 
@@ -104,84 +92,74 @@ Lastly, the Observability Layer integrates Amazon CloudWatch for logging and mon
 #### Implementation Phases
 | Phase | Duration | Description |
 |--------|-----------|-------------|
-| **1. Setup & CI/CD** | Weeks 1–3 | Define architecture, CDK setup, connect Amplify & GitLab |
-| **2. Core Backend** | Weeks 4–7 | Build Cognito auth, API Gateway, and Router Lambda |
-| **3. Frontend Integration** | Weeks 8–10 | Implement Next.js UI, connect APIs, enable CRUD |
-| **4. AI & Monitoring** | Weeks 11–13 | Integrate Bedrock, add CloudWatch and X-Ray |
-| **5. Final Testing** | Week 14 | Load test, deploy to production |
+| **1. Setup & CI/CD** | Weeks 1–3 | CDK setup, Amplify integration, GitLab pipelines |
+| **2. Core Backend** | Weeks 4–7 | Cognito auth, API Gateway, Lambda routing |
+| **3. Frontend Integration** | Weeks 8–10 | Next.js UI + API connections |
+| **4. AI & Monitoring** | Weeks 11–13 | Bedrock integration, CloudWatch & X-Ray setup |
+| **5. Final Testing** | Week 14 | Load testing, production deployment |
 
 #### Technical Requirements
-- **Frontend:** Next.js (Amplify hosting)  
-- **Backend:** Lambda (Node.js), API Gateway, Cognito (JWT Auth)  
-- **AI:** Amazon Bedrock (Claude via SDK)  
-- **Database:** DynamoDB single-table with GSI  
-- **DevOps:** GitLab CI/CD pipelines for Amplify & CDK  
+- **Frontend:** Next.js (Amplify Hosting)  
+- **Backend:** Node.js (Lambda), API Gateway, Cognito  
+- **AI:** Amazon Bedrock (Claude model)  
+- **Database:** DynamoDB (single-table, GSI)  
+- **DevOps:** GitLab CI/CD for Amplify & CDK  
 
 ---
 
 ### 5. Timeline & Milestones
 | Month | Deliverables |
 |--------|--------------|
-| **Month 1** | Architecture design, CI/CD pipeline complete |
-| **Month 2** | Auth + Backend APIs operational |
-| **Month 3** | Frontend integrated, AI & monitoring enabled |
-| **End of Month 3** | 🎉 Production-ready deployment |
+| **Month 1** | Architecture finalized, CI/CD ready |
+| **Month 2** | Authentication & backend APIs complete |
+| **Month 3** | Frontend, AI, and observability layers live |
+| **End of Month 3** | Production-ready release |
 
 ---
 
 ### 6. Budget Estimation
-### Infrastructure Costs
-The estimated cost for 50 active users per month is calculated based on actual AWS service usage, excluding any Free Tier benefits.
-
-#### AWS Services:
+#### AWS Service Cost Estimation (100 active users, no free tier)
 | Service | Description | Estimated Monthly Cost (USD) |
 |----------|--------------|-------------------------------|
-| **AWS Amplify** | Hosts the Next.js frontend web app | **$1.00** |
-| **Amazon CloudFront** | Global CDN distribution for frontend | **$0.50** |
-| **AWS WAF** | 1 Web ACL with 1 rule for CloudFront | **$5.00** |
-| **Amazon API Gateway** | Handles ~10,000 API requests/month | **$0.15** |
-| **AWS Lambda** | 2 functions (API router + Auth handler) | **$0.10** |
-| **Amazon DynamoDB** | On-demand mode for small workloads | **$0.25** |
-| **Amazon S3** | Stores static assets and backups (2 buckets) | **$0.20** |
-| **Amazon Cognito** | Authentication for 50 MAU | **$0.25** |
-| **Amazon Bedrock** | Text generation for AI feature (~20K tokens) | **$2.00** |
-| **Amazon EventBridge** | Asynchronous event processing | **$0.05** |
-| **Amazon Route 53** | Domain registration + hosted zone + DNS queries | **$1.51** |
-| **AWS Certificate Manager (ACM)** | SSL certificate for HTTPS | **$0.00** |
-| **AWS CloudFormation / CDK Stack** | Infrastructure deployment | **$0.00** |
+| **AWS Amplify** | Frontend hosting & CI/CD builds | **$2.00** |
+| **Amazon CloudFront** | CDN delivery (100GB data) | **$5.00** |
+| **AWS WAF** | 1 Web ACL with basic rules | **$5.00** |
+| **Amazon API Gateway** | ~25,000 API requests/month | **$0.40** |
+| **AWS Lambda** | 4 functions, ~1M invocations | **$0.80** |
+| **Amazon DynamoDB** | On-demand mode (moderate access) | **$0.60** |
+| **Amazon S3** | 5GB assets + 20GB images | **$0.50** |
+| **Amazon Cognito** | 100 Monthly Active Users | **$0.50** |
+| **Amazon Bedrock** | AI text generation (~50K tokens) | **$2.50** |
+| **Amazon EventBridge** | Event-driven tasks | **$0.10** |
+| **Amazon Route 53** | Domain + DNS + hosted zone | **$1.30** |
+| **ACM / CloudFormation / SNS / X-Ray** | SSL + infra mgmt + monitoring | **$0.00** |
 
-**➡ Total Estimated Monthly Cost:** ≈ **$11.01 USD**  
-**➡ Annual Cost:** ≈ **$132.12 USD**
-
----
-
-### Hardware & Miscellaneous
-- **Development Tools:** Covered by existing local environments (VSCode, GitLab CI/CD, etc.)  
-- **Hardware:** None required (serverless architecture)
+**➡ Total Estimated Monthly Cost:** ≈ **$16.70 USD**  
+**➡ Annual Cost:** ≈ **$200.40 USD**
 
 ---
 
 ### 7. Risk Assessment
 | Risk | Impact | Probability |
 |-------|---------|-------------|
-| Bedrock cost spikes | Medium | Low |
-| Auth misconfig (Cognito) | High | Medium |
-| WAF rule misconfig | Medium | Low |
+| Unexpected Bedrock usage | Medium | Medium |
+| Cognito misconfiguration | High | Medium |
+| WAF rule blocking valid traffic | Medium | Low |
 
-**Mitigation:**  
-- Limit Bedrock token count & monitor via CloudWatch alarms.  
-- Use least-privilege IAM roles.  
-- Test WAF ACLs before production.
+**Mitigation Strategies:**  
+- Implement CloudWatch budget alarms for Bedrock usage.  
+- Apply IAM least privilege for Lambda roles.  
+- Test WAF rules in staging before production rollout.
 
 ---
 
 ### 8. Expected Outcomes
-#### Technical Improvements
-- Fully functional **serverless web social app** with AI recipe generation.  
-- Secure and scalable backend with **Cognito + WAF**.  
-- Observable and maintainable architecture with **CloudWatch & X-Ray**.  
+#### Technical Achievements
+- Fully functional **serverless social platform** with AI-generated recipes.  
+- Scalable and secure architecture using **Cognito**, **WAF**, and **CloudFront**.  
+- Comprehensive observability with **CloudWatch** and **X-Ray**.
 
-#### Long-term Value
-- Demonstrates applied knowledge in **Serverless, DevOps, and AI Integration**.  
-- Scalable to 500+ users with minor configuration changes.  
-- Reusable as a reference template for future AWS projects.
+#### Long-term Benefits
+- Demonstrates real-world expertise in **Serverless DevOps and AI integration**.  
+- Supports up to **500+ users** with minor scaling adjustments.  
+- Provides a reusable AWS reference architecture for future projects.
