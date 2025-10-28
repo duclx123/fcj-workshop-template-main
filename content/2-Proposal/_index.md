@@ -20,7 +20,7 @@ The architecture leverages **AWS managed services** for scalability, cost effici
 - **Amazon DynamoDB** (NoSQL data store)
 - **Amazon Bedrock** (AI text generation)
 - **Amazon Cognito** (authentication)
-- **Amazon CloudFront + WAF + ACM + Route 53** (secure content delivery)
+- **Amazon CloudFront + WAF + Route 53** (secure content delivery)
 
 This solution provides an affordable, production-ready foundation for modern serverless applications.
 
@@ -63,7 +63,9 @@ The system follows a **five-layer serverless architecture** that ensures modular
 
 At the **CI/CD Layer**, GitLab automates deployments — pushing frontend code to **AWS Amplify** and provisioning backend infrastructure via **AWS CDK** and **CloudFormation**.
 
-The **Edge Layer** secures and routes all requests using **Amazon Route 53** for DNS, **ACM** for SSL/TLS, **WAF** for traffic filtering, and **CloudFront** for global content caching. CloudFront communicates privately with **S3** using an **Origin Access Identity (OAI)**.
+The **Edge Layer** secures and routes all requests using **Amazon Route 53** for DNS, **WAF** for traffic filtering, and **CloudFront** for global content caching.  
+SSL/TLS certificates are automatically managed by **AWS Amplify** (no separate ACM required).  
+CloudFront communicates privately with **S3** using an **Origin Access Identity (OAI)**.
 
 In the **Application Layer**, Amplify hosts the **Next.js frontend**, while **API Gateway** and **Lambda** handle backend logic. **Cognito** authenticates users and manages tokens for API access.
 
@@ -77,7 +79,7 @@ Finally, the **Observability Layer** integrates **CloudWatch** (logs & metrics),
 | Category | Services |
 |-----------|-----------|
 | **Frontend & CI/CD** | AWS Amplify (Next.js), GitLab, AWS CDK, CloudFormation |
-| **Edge & Security** | Route 53, ACM, CloudFront, WAF |
+| **Edge & Security** | Route 53, CloudFront, WAF |
 | **Application & Compute** | API Gateway, AWS Lambda, Amazon Cognito |
 | **Data & AI** | DynamoDB (single-table), S3, Amazon Bedrock |
 | **Observability & Events** | CloudWatch, X-Ray, SNS, EventBridge |
@@ -86,7 +88,7 @@ Finally, the **Observability Layer** integrates **CloudWatch** (logs & metrics),
 
 ### Component Design
 - **User Access:** User → CloudFront → Amplify (Frontend)  
-- **Authentication:** CloudFront → Cognito (Hosted UI redirect)  
+- **Authentication:** Amplify → Cognito (Hosted UI redirect)  
 - **API Calls:** Amplify → Route 53 → CloudFront → WAF → API Gateway  
 - **API Authorization:** API Gateway → Cognito Authorizer  
 - **Backend Logic:** API Router Lambda → DynamoDB / S3 / Bedrock  
@@ -140,7 +142,7 @@ Finally, the **Observability Layer** integrates **CloudWatch** (logs & metrics),
 | **Amazon Bedrock** | AI text generation (~50K tokens) | **$2.50** |
 | **Amazon EventBridge** | Event-driven tasks | **$0.10** |
 | **Amazon Route 53** | Domain + DNS + hosted zone | **$1.30** |
-| **ACM / CloudFormation / SNS / X-Ray** | SSL + infra mgmt + monitoring | **$0.00** |
+| **CloudFormation / SNS / X-Ray** | Infra mgmt + monitoring | **$0.00** |
 
 **➡ Total Estimated Monthly Cost:** ≈ **$16.70 USD**  
 **➡ Annual Cost:** ≈ **$200.40 USD**
