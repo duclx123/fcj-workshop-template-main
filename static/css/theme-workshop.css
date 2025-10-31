@@ -1,26 +1,26 @@
 :root {
-  --MAIN-TEXT-color: #2c3e50; /* Color of text by default */
-  --MAIN-TITLES-TEXT-color: #e74c3c; /* Color of titles h2-h3-h4-h5 - Bright Red */
-  --MAIN-LINK-color: #3498db; /* Color of links - Bright Blue */
-  --MAIN-LINK-HOVER-color: #2980b9; /* Color of hovered links - Darker Blue */
-  --MAIN-ANCHOR-color: #9b59b6; /* color of anchors on titles - Purple */
+  --MAIN-TEXT-color: #323235; /* Color of text by default */
+  --MAIN-TITLES-TEXT-color: #778ba5; /* Color of titles h2-h3-h4-h5 */
+  --MAIN-LINK-color: #4881cd; /* Color of links */
+  --MAIN-LINK-HOVER-color: #599af1; /* Color of hovered links */
+  --MAIN-ANCHOR-color: #4881cd; /* color of anchors on titles */
 
-  --MENU-HEADER-BG-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Background color of menu header - Gradient Purple to Blue */
-  --MENU-HEADER-BORDER-color: #8e44ad; /*Color of menu header border - Purple */
+  --MENU-HEADER-BG-color: #283e5b; /* Background color of menu header */
+  --MENU-HEADER-BORDER-color: #435c7c; /*Color of menu header border */
 
-  --MENU-SEARCH-BG-color: #34495e; /* Search field background color */
-  --MENU-SEARCH-BOX-color: #f39c12; /* Override search field border color - Orange */
-  --MENU-SEARCH-BOX-ICONS-color: #f1c40f; /* Override search field icons color - Yellow */
+  --MENU-SEARCH-BG-color: #202c3c; /* Search field background color (by default borders + icons) */
+  --MENU-SEARCH-BOX-color: #4d6584; /* Override search field border color */
+  --MENU-SEARCH-BOX-ICONS-color: #4d6584; /* Override search field icons color */
 
-  --MENU-SECTIONS-ACTIVE-BG-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Background color of the active section - Gradient */
-  --MENU-SECTIONS-BG-color: #2c3e50; /* Background color of other sections - Dark Blue */
-  --MENU-SECTIONS-LINK-color: #ecf0f1; /* Color of links in menu - Light Gray */
-  --MENU-SECTIONS-LINK-HOVER-color: #f39c12; /* Color of links in menu, when hovered - Orange */
-  --MENU-SECTION-ACTIVE-CATEGORY-color: #2c3e50; /* Color of active category text - Dark */
-  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); /* Color of background for the active category - Pink Gradient */
+  --MENU-SECTIONS-ACTIVE-BG-color: #0a0c0e; /* Background color of the active section and its childs */
+  --MENU-SECTIONS-BG-color: #1c222a; /* Background color of other sections */
+  --MENU-SECTIONS-LINK-color: #ccc; /* Color of links in menu */
+  --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6; /* Color of links in menu, when hovered */
+  --MENU-SECTION-ACTIVE-CATEGORY-color: #777; /* Color of active category text */
+  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff; /* Color of background for the active category (only) */
 
-  --MENU-VISITED-color: #1abc9c; /* Color of 'page visited' icons in menu - Turquoise */
-  --MENU-SECTION-HR-color: #e74c3c; /* Color of <hr> separator in menu - Red */
+  --MENU-VISITED-color: #33a1ff; /* Color of 'page visited' icons in menu */
+  --MENU-SECTION-HR-color: #20272b; /* Color of <hr> separator in menu */
 }
 
 body {
@@ -115,16 +115,9 @@ a:hover {
   background-color: var(--MENU-SECTIONS-BG-color);
 }
 #sidebar #header-wrapper {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--MENU-HEADER-BG-color);
   color: var(--MENU-SEARCH-BOX-color);
   border-color: var(--MENU-HEADER-BORDER-color);
-  box-shadow: 0 4px 15px rgba(103, 126, 234, 0.3);
-  transition: all 0.3s ease;
-}
-
-#sidebar #header-wrapper:hover {
-  box-shadow: 0 6px 25px rgba(103, 126, 234, 0.5);
-  transform: translateY(-2px);
 }
 #sidebar .searchbox {
   border-color: var(--MENU-SEARCH-BOX-color);
@@ -147,18 +140,8 @@ a:hover {
 }
 
 #sidebar ul li.active > a {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: var(--MENU-SECTION-ACTIVE-CATEGORY-BG-color);
   color: var(--MENU-SECTION-ACTIVE-CATEGORY-color) !important;
-  border-radius: 8px;
-  margin: 4px 8px;
-  padding: 8px 12px;
-  box-shadow: 0 3px 10px rgba(245, 87, 108, 0.3);
-  transition: all 0.3s ease;
-}
-
-#sidebar ul li.active > a:hover {
-  transform: scale(1.02);
-  box-shadow: 0 5px 15px rgba(245, 87, 108, 0.5);
 }
 
 #sidebar hr {
@@ -167,22 +150,12 @@ a:hover {
 
 #navigation a.nav-prev,
 #navigation a.nav-next {
-  color: #f39c12 !important;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(241, 158, 57, 0.3);
-  border: 2px solid transparent;
+  color: #f19e39 !important;
 }
 
 #navigation a.nav-prev:hover,
 #navigation a.nav-next:hover {
-  color: #fff !important;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(241, 158, 57, 0.5);
-  border: 2px solid #f39c12;
+  color: #e07d04 !important;
 }
 
 div.notices p:first-child:before {
@@ -208,16 +181,6 @@ h4,
 h5 {
   color: var(--MAIN-TITLES-TEXT-color) !important;
   font-family: "Amazon Ember", "Montserrat", sans-serif;
-  background: linear-gradient(135deg, #e74c3c 0%, #f39c12 50%, #9b59b6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: all 0.3s ease;
-}
-
-h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
-  transform: scale(1.02);
-  text-shadow: 0 2px 4px rgba(231, 76, 60, 0.3);
 }
 
 .ui-state-default,
@@ -256,85 +219,10 @@ a.ui-button:active,
 }
 
 pre {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
-  border-radius: 10px;
-  border: 2px solid #3498db;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
-  transition: all 0.3s ease;
-}
-
-pre:hover {
-  box-shadow: 0 6px 25px rgba(52, 152, 219, 0.4);
-  transform: translateY(-2px);
+  background-color: var(--MENU-SECTIONS-BG-color) !important;
 }
 
 div.notices.info p {
   border-top: 30px solid #fd9827;
-  background: linear-gradient(135deg, #fff2db 0%, #ffeaa7 100%);
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(253, 152, 39, 0.3);
-  transition: all 0.3s ease;
-  border-left: 5px solid #e17055;
-}
-
-div.notices.info p:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 25px rgba(253, 152, 39, 0.5);
-}
-
-/* Thêm một số hiệu ứng màu mè cho sidebar */
-#sidebar {
-  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Hiệu ứng hover cho menu items */
-#sidebar a {
-  color: var(--MENU-SECTIONS-LINK-color);
-  transition: all 0.3s ease;
-  border-radius: 5px;
-  margin: 2px 5px;
-  padding: 5px 10px;
-}
-
-#sidebar a:hover {
-  color: var(--MENU-SECTIONS-LINK-HOVER-color);
-  background: rgba(243, 156, 18, 0.1);
-  transform: translateX(5px);
-}
-
-/* Hiệu ứng rainbow cho searchbox */
-#sidebar .searchbox {
-  border-color: var(--MENU-SEARCH-BOX-color);
-  background: var(--MENU-SEARCH-BG-color);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-#sidebar .searchbox:hover {
-  box-shadow: 0 0 15px rgba(243, 156, 18, 0.5);
-}
-
-#sidebar .searchbox::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-  border-radius: 22px;
-  z-index: -1;
-  animation: rainbow 3s ease-in-out infinite;
-  background-size: 400% 400%;
-}
-
-@keyframes rainbow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  background: #fff2db;
 }
