@@ -1,59 +1,52 @@
 ---
 title: "Worklog Tuần 8"
-date: 2025-01-01
+date: 2025-10-27
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
 
 ### Mục tiêu tuần 8:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Tìm hiểu các khái niệm nâng cao về mạng trên AWS, bao gồm **VPC Peering**, **Transit Gateway**, và **PrivateLink**.  
+* Triển khai **kết nối hybrid cloud** giữa on-premises và AWS.  
+* Hiểu và cấu hình **AWS Direct Connect** cho kết nối mạng riêng.  
+* Thực hành các **best practice bảo mật mạng** và quản lý luồng traffic.  
+* Giám sát và xử lý sự cố mạng bằng **VPC Flow Logs** và **CloudWatch**.  
+
+---
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+|-----|------|-------------|------------------|--------------------|
+| 2 | - Tìm hiểu **VPC Peering** và **Transit Gateway**.<br>- **Thực hành:**<br>&emsp;+ Tạo kết nối VPC peering giữa hai VPC.<br>&emsp;+ Cấu hình routing table để điều hướng traffic.<br>&emsp;+ Kiểm tra kết nối giữa các EC2 instance.<br><br>→ Hiểu cách giao tiếp giữa các VPC. | 27/10/2025 | 27/10/2025 | [AWS Study Group](https://000041.awsstudygroup.com/) |
+| 3 | - Tìm hiểu **AWS PrivateLink** và endpoint services.<br>- **Thực hành:**<br>&emsp;+ Tạo PrivateLink endpoint để truy cập dịch vụ riêng tư.<br>&emsp;+ Kiểm tra truy cập dịch vụ mà không qua Internet công cộng.<br><br>→ Đảm bảo kết nối riêng tư và bảo mật. | 28/10/2025 | 28/10/2025 | [AWS Study Group](https://000042.awsstudygroup.com/) |
+| 4 | - Tìm hiểu **AWS Direct Connect** cho kết nối mạng riêng.<br>- **Thực hành:**<br>&emsp;+ Tạo kết nối Direct Connect.<br>&emsp;+ Thiết lập virtual interface và kiểm tra routing.<br><br>→ Giảm độ trễ và tăng băng thông đáng tin cậy. | 29/10/2025 | 29/10/2025 | [AWS Study Group](https://000043.awsstudygroup.com/) |
+| 5 | - Tìm hiểu thiết kế hybrid cloud và tích hợp với on-premises.<br>- **Thực hành:**<br>&emsp;+ Kết nối mạng on-premises với AWS qua VPN và Direct Connect.<br>&emsp;+ Kiểm tra failover và routing giữa cloud và tài nguyên local.<br><br>→ Thực hành kịch bản mạng hybrid. | 30/10/2025 | 30/10/2025 | [AWS Study Group](https://000044.awsstudygroup.com/) |
+| 6 | - Thực hành giám sát và bảo mật mạng.<br>- **Thực hành:**<br>&emsp;+ Bật **VPC Flow Logs** và phân tích traffic.<br>&emsp;+ Thiết lập **CloudWatch Alarms** cho sự cố mạng.<br>&emsp;+ Áp dụng **Security Group** và **NACL** theo best practice.<br><br>→ Đảm bảo mạng an toàn và dễ giám sát. | 31/10/2025 | 31/10/2025 | [AWS Study Group](https://000045.awsstudygroup.com/) |
 
-### Kết quả đạt được tuần 8:
+---
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Kết quả tuần 8
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+#### 1. VPC Peering & Transit Gateway
+- Thiết lập thành công **kết nối VPC peering** và kiểm tra giao tiếp giữa các VPC.  
+- Cấu hình **Transit Gateway** để tập trung routing cho nhiều VPC.  
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+#### 2. AWS PrivateLink
+- Tạo **PrivateLink endpoints** để truy cập dịch vụ AWS một cách riêng tư.  
+- Xác nhận traffic không đi qua Internet công cộng, nâng cao bảo mật.  
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+#### 3. AWS Direct Connect
+- Cấu hình **kết nối mạng riêng** bằng Direct Connect.  
+- Kiểm tra routing và cải thiện băng thông cho kết nối hybrid.  
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+#### 4. Hybrid Cloud Integration
+- Kết nối mạng on-premises với AWS qua **VPN + Direct Connect**.  
+- Kiểm tra failover, routing, và độ tin cậy của môi trường hybrid.  
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+#### 5. Network Monitoring & Security
+- Bật **VPC Flow Logs** và phân tích traffic.  
+- Thiết lập **CloudWatch Alarms** để giám sát sự cố mạng.  
+- Áp dụng **Security Groups** và **NACLs** để đảm bảo an toàn.

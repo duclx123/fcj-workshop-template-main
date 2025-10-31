@@ -1,57 +1,52 @@
 ---
 title: "Week 8 Worklog"
-date: 2025-01-01
+date: 2025-10-27
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 8 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn advanced AWS networking concepts including **VPC peering**, **Transit Gateway**, and **PrivateLink**.  
+* Implement **hybrid cloud connectivity** between on-premises and AWS.  
+* Understand and configure **AWS Direct Connect** for dedicated network connections.  
+* Practice **network security best practices** and traffic flow management.  
+* Monitor and troubleshoot network performance using **VPC Flow Logs** and **CloudWatch**.  
+
+---
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|-------------|------------------|--------------------|
+| 2 | - Study **VPC Peering** and **Transit Gateway** concepts.<br>- **Practice:**<br>&emsp;+ Create VPC peering connections between two VPCs.<br>&emsp;+ Configure routing tables for traffic flow.<br>&emsp;+ Test connectivity using EC2 instances.<br><br>→ Understand cross-VPC communication. | 27/10/2025 | 27/10/2025 | [AWS Study Group](https://000041.awsstudygroup.com/) |
+| 3 | - Learn **AWS PrivateLink** and endpoint services.<br>- **Practice:**<br>&emsp;+ Create a PrivateLink endpoint to access a service privately.<br>&emsp;+ Test service access without using the public internet.<br><br>→ Ensure secure private connectivity. | 28/10/2025 | 28/10/2025 | [AWS Study Group](https://000042.awsstudygroup.com/) |
+| 4 | - Explore **AWS Direct Connect** for dedicated network connections.<br>- **Practice:**<br>&emsp;+ Create a Direct Connect connection.<br>&emsp;+ Set up a virtual interface and verify routing.<br><br>→ Reduce latency and improve bandwidth reliability. | 29/10/2025 | 29/10/2025 | [AWS Study Group](https://000043.awsstudygroup.com/) |
+| 5 | - Learn hybrid cloud design and integration with on-premises.<br>- **Practice:**<br>&emsp;+ Connect an on-premises network to AWS via VPN and Direct Connect.<br>&emsp;+ Test failover and routing between cloud and local resources.<br><br>→ Gain experience with hybrid network scenarios. | 30/10/2025 | 30/10/2025 | [AWS Study Group](https://000044.awsstudygroup.com/) |
+| 6 | - Implement network monitoring and security.<br>- **Practice:**<br>&emsp;+ Enable **VPC Flow Logs** and analyze traffic.<br>&emsp;+ Set up **CloudWatch alarms** for network anomalies.<br>&emsp;+ Apply **Security Group** and **NACL** best practices.<br><br>→ Ensure secure and observable networking environment. | 31/10/2025 | 31/10/2025 | [AWS Study Group](https://000045.awsstudygroup.com/) |
 
-### Week 8 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 8 Achievements
 
-* Successfully created and configured an AWS Free Tier account.
+#### 1. VPC Peering & Transit Gateway
+- Successfully established **VPC peering connections** and tested cross-VPC traffic.  
+- Configured **Transit Gateway** to centralize routing across multiple VPCs.  
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+#### 2. AWS PrivateLink
+- Created **PrivateLink endpoints** for secure, private access to AWS services.  
+- Verified that traffic bypassed the public internet, improving security.  
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+#### 3. AWS Direct Connect
+- Configured **dedicated network connections** using Direct Connect.  
+- Tested routing and bandwidth improvements for hybrid connectivity.  
 
-* Used AWS CLI to perform basic operations such as:
+#### 4. Hybrid Cloud Integration
+- Connected on-premises network with AWS using **VPN + Direct Connect**.  
+- Tested failover, routing, and hybrid communication reliability.  
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+#### 5. Network Monitoring & Security
+- Enabled **VPC Flow Logs** and analyzed traffic patterns.  
+- Set up **CloudWatch Alarms** for network performance anomalies.  
+- Applied **Security Groups** and **NACLs** to enforce best practices.
