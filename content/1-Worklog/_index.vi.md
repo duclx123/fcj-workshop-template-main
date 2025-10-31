@@ -25,7 +25,7 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 7:** [Giám sát tài nguyên đám mây và tối ưu chi phí](1.7-week7/)
 
-**Tuần 8:** [Làm công việc H...](1.8-week8/)
+**Tuần 8:** [Mạng Nâng Cao và Hybrid Cloud](1.8-week8/)
 
 **Tuần 9:** [Làm công việc I...](1.9-week9/)
 
