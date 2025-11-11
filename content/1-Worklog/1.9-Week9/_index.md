@@ -1,57 +1,52 @@
 ---
 title: "Week 9 Worklog"
-date: 2025-01-01
+date: 2025-11-03
 weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
 
 ### Week 9 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn how to design secure and scalable CI/CD pipelines.  
+* Build deployment workflows using **AWS CodePipeline**, **CodeBuild**, and **CodeDeploy**.  
+* Integrate GitHub or CodeCommit as the source provider.  
+* Automate application deployment to EC2 and Lambda.  
+* Strengthen pipeline security and add automated testing stages.  
+
+---
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+|-----|------|-------------|------------------|--------------------|
+| 2 | - Study concepts of **CI/CD pipelines** on AWS.<br>- Understand how CodePipeline orchestrates build → test → deploy.<br>- **Practice:**<br>&emsp;+ Create a simple CodePipeline with GitHub as the source.<br><br>→ Gain foundational understanding of CI/CD automation. | 03/11/2025 | 03/11/2025 | [AWS Study Group](https://000042.awsstudygroup.com/) |
+| 3 | - Learn **AWS CodeBuild** for building and testing applications.<br>- **Practice:**<br>&emsp;+ Write a `buildspec.yml` file.<br>&emsp;+ Run automated builds and unit tests.<br><br>→ Understand build automation and environment configuration. | 04/11/2025 | 04/11/2025 | [AWS Study Group](https://000043.awsstudygroup.com/) |
+| 4 | - Work with **AWS CodeDeploy** for deployment automation.<br>- **Practice:**<br>&emsp;+ Create an EC2 deployment group.<br>&emsp;+ Deploy application revisions using AppSpec.<br>&emsp;+ Test in-place and blue/green deployments.<br><br>→ Learn automated deployment to EC2. | 05/11/2025 | 05/11/2025 | [AWS Study Group](https://000044.awsstudygroup.com/) |
+| 5 | - Integrate **Lambda deployments** into CodePipeline.<br>- **Practice:**<br>&emsp;+ Deploy Lambda functions using CodeDeploy Lambda.<br>&emsp;+ Test linear and canary deployment strategies.<br><br>→ Implement CI/CD for serverless workloads. | 06/11/2025 | 06/11/2025 | [AWS Study Group](https://000045.awsstudygroup.com/) |
+| 6 | - Add pipeline security and monitoring.<br>- **Practice:**<br>&emsp;+ Enable CloudWatch and SNS notifications.<br>&emsp;+ Configure IAM permissions for pipeline stages.<br>&emsp;+ Add test/approval stages for safer deployments.<br><br>→ Improve CI/CD reliability and governance. | 07/11/2025 | 07/11/2025 | [AWS Study Group](https://000046.awsstudygroup.com/) |
 
-### Week 9 Achievements:
+---
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Week 9 Achievements
 
-* Successfully created and configured an AWS Free Tier account.
+#### 1. CI/CD Pipeline Fundamentals
+- Understood the CI/CD workflow: source → build → test → deploy.  
+- Built the first automated **CodePipeline** integrated with GitHub.  
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+#### 2. Build Automation (CodeBuild)
+- Wrote a complete **buildspec.yml** for automated build and testing.  
+- Successfully executed builds in an isolated CodeBuild environment.  
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+#### 3. Deployment Automation (CodeDeploy)
+- Configured EC2 deployment groups and executed in-place & blue/green deployments.  
+- Understood the role of **AppSpec** and lifecycle hooks.  
 
-* Used AWS CLI to perform basic operations such as:
+#### 4. Serverless Deployment
+- Automated deployment of **Lambda functions** using CodeDeploy.  
+- Tested safe rollout strategies like **Linear** & **Canary** deployments.  
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+#### 5. Pipeline Security & Governance
+- Added approval steps, IAM permissions, and fine-grained access controls.  
+- Monitored pipeline executions using CloudWatch & SNS alerts.  
+- Improved reliability and safety of the entire CI/CD workflow.
